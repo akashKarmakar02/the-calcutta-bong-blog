@@ -2,17 +2,33 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
+import {myTheme} from './theme'
+import StudioNavBar from './components/StudioNavBar'
+import Logo from './components/Logo'
+
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
 
 export default defineConfig({
-  name: 'default',
-  title: 'next13-sanity-blog',
+  basePath: '/studio',
+  name: 'PAPAFAM_Content_Studio',
+  title: 'PAPAFAM Content Studio',
 
-  projectId: 'ixj1n2a9',
-  dataset: 'production',
+  projectId: projectId!,
+  dataset: dataset!,
 
   plugins: [deskTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
   },
+
+  studio: {
+    components: {
+      logo: Logo,
+      navbar: StudioNavBar,
+    }
+  },
+
+  theme: myTheme,
 })
