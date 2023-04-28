@@ -11,8 +11,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'PAPAFAM_Content_Studio',
-  title: 'PAPAFAM Content Studio',
+  name: 'The_Calcutta_Bong_Content_Studio',
+  title: 'The Calcutta Bong Content Studio',
 
   projectId: projectId!,
   dataset: dataset!,
