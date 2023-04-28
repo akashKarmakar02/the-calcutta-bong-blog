@@ -20,6 +20,12 @@ export default defineType({
       },
     }),
     defineField({
+      name: "description",
+      description: "Enter a short snippet of the blog...",
+      title: "Description",
+      type: "string"
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
