@@ -7,12 +7,12 @@ function Banner() {
             <span className="underline decoration-4 decoration-[#F7AB0A]">
                 our celebration{" "}
             </span>
-            of Bengal's rich art, song, and culture!
+            of Bengals rich art, song, and culture!
             </h2>
         </div>
 
         <p className="mt-5 md:mt-2 text-gray-400 max-w-sm">
-        Journey Through the Cultural Wonders of Bengal's Art, Song, and Dance
+        Journey Through the Cultural Wonders of Bengals Art, Song, and Dance
         </p>
     </div>
   )
