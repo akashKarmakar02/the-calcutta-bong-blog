@@ -24,7 +24,7 @@ async function page({params: {slug}}: Props) {
     const post: Post = await client.fetch(query)
   return (
     <article className="px-10 pb-20">
-        <section className="space-y-2 border border-[#F7AB0A] text-white">
+        <section className="space-y-5 mb-4 border border-[#F7AB0A] text-white">
             <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
                 <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
                     <Image 
