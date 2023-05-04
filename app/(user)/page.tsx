@@ -1,8 +1,7 @@
-import { previewData } from "next/headers";
+"use client"
+
 import {groq} from 'next-sanity'
 import { client } from "@/lib/sanity.client";
-import PreviewSuspense from "@/components/PreviewSuspense";
-import PreviewBlogList from "@/components/PreviewBlogList";
 import BlogList from "@/components/BlogList";
 
 const query = groq`
@@ -14,22 +13,7 @@ const query = groq`
 `
 
 export default async function Page() {
-    if (previewData()) {
-        return (
-            <PreviewSuspense fallback={(
-                <div role="status">
-                    <p className="text-center text-lg animate-pulse text-[#F7AB0A]">
-                        Loading Preview Data....
-                    </p>
-                </div>
-            )}>
-                <PreviewBlogList query={query} />
-            </PreviewSuspense>
-        )
-    }
-
     const data = await client.fetch(query, {next: {revalidate: 1, cache: 'no-store'}}).then(res => res);
-    console.log(data);
     
     return <BlogList posts={data} />;
     
