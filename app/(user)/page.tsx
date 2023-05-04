@@ -27,8 +27,8 @@ export default async function Page() {
             </PreviewSuspense>
         )
     }
-    
-    const data = await client.fetch(query);
+
+    const data = await client.fetch(query, {next: {revalidate: 1, cache: 'no-store'}}).then(res => res);
     console.log(data);
     
     return <BlogList posts={data} />;

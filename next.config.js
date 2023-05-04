@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
+    isrMemoryCacheSize: 50,
   },
   images: {
     domains: ["cdn.sanity.io"],
