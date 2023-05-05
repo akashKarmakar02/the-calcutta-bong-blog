@@ -1,5 +1,3 @@
-"use client"
-
 import {groq} from 'next-sanity'
 import { client } from "@/lib/sanity.client";
 import BlogList from "@/components/BlogList";
@@ -12,8 +10,10 @@ const query = groq`
     } | order(_createdAt desc)
 `
 
+export const revalidate = 1800;
+
 export default async function Page() {
-    const data = await client.fetch(query, {next: {revalidate: 1, cache: 'no-store'}}).then(res => res);
+    const data = await client.fetch(query).then(res => res);
     
     return <BlogList posts={data} />;
     
